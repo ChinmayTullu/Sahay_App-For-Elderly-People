@@ -1,0 +1,20 @@
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_pressed="true">
+        <shape>
+            <solid android:color="#FFB300"/> <!-- Darker yellow when pressed -->
+            <corners android:radius="8dp"/>
+        </shape>
+    </item>
+    <item>
+        <shape>
+            <solid android:color="#FFD700"/> <!-- Regular yellow color -->
+            <corners android:radius="8dp"/>
+            <shadowColor android:color="#55000000" /> <!-- Button shadow -->
+            <padding
+                android:left="20dp"
+                android:top="10dp"
+                android:right="20dp"
+                android:bottom="10dp" />
+        </shape>
+    </item>
+</selector>

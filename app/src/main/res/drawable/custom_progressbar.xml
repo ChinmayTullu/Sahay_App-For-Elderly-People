@@ -1,0 +1,14 @@
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="#D3D3D3"/> <!-- Background color -->
+        </shape>
+    </item>
+    <item>
+        <clip android:clipOrientation="horizontal" android:gravity="left">
+            <shape android:shape="rectangle">
+                <solid android:color="#FFD700"/> <!-- Yellow progress -->
+            </shape>
+        </clip>
+    </item>
+</layer-list>

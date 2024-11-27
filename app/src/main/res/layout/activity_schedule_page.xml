@@ -1,0 +1,378 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SchedulePage">
+
+    <TextView
+        android:id="@+id/titleText"
+        android:layout_width="200dp"
+        android:layout_height="40dp"
+        android:textSize="26sp"
+        android:text="@string/my_schedule"
+        android:textColor="@color/lightish_green"
+        android:gravity="center_horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/buttonsLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/backImageView"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        android:contentDescription="@string/settings"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_back" />
+
+    <Button
+        android:id="@+id/clearBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="15dp"
+        android:backgroundTint="@color/lightish_green"
+        android:text="@string/logout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/buttonsLayout"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.163">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/monButton"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_marginEnd="1dp"
+            android:layout_weight="0.5"
+            android:background="@drawable/rectangular_button"
+            android:padding="0dp"
+            android:text="@string/mon"
+            android:textColor="@color/black"
+            android:textSize="19sp" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/tueButton"
+            android:layout_marginEnd="1dp"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_weight="0.5"
+            android:textSize="19sp"
+            android:textColor="@color/black"
+            android:background="@drawable/rectangular_button"
+            android:padding="0dp"
+            android:text="@string/tue" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/wedButton"
+            android:padding="0dp"
+            android:layout_marginEnd="1dp"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_weight="0.5"
+            android:textSize="19sp"
+            android:textColor="@color/black"
+            android:background="@drawable/rectangular_button"
+            android:text="@string/wed" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/thuButton"
+            android:padding="0dp"
+            android:layout_marginEnd="1dp"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_weight="0.5"
+            android:textSize="19sp"
+            android:textColor="@color/black"
+            android:background="@drawable/rectangular_button"
+            android:text="@string/thu" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/friButton"
+            android:padding="0dp"
+            android:layout_marginEnd="1dp"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_weight="0.5"
+            android:textSize="19sp"
+            android:textColor="@color/black"
+            android:background="@drawable/rectangular_button"
+            android:text="@string/fri" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/satButton"
+            android:padding="0dp"
+            android:layout_marginEnd="1dp"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_weight="0.5"
+            android:textSize="19sp"
+            android:textColor="@color/black"
+            android:background="@drawable/rectangular_button"
+            android:text="@string/sat" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/sunButton"
+            android:padding="0dp"
+            android:layout_marginEnd="1dp"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_weight="0.5"
+            android:textSize="19sp"
+            android:textColor="@color/black"
+            android:background="@drawable/rectangular_button"
+            android:text="@string/sun" />
+    </LinearLayout>
+
+    <ScrollView
+        android:id="@+id/mainDashboardScrollView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonsLayout">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_corner_background"
+            android:layout_marginHorizontal="14dp"
+            android:layout_marginTop="0dp"
+            android:layout_marginBottom="16dp"
+            android:padding="8dp"
+            android:orientation="vertical">
+
+            <!-- First row of boxes -->
+            <LinearLayout
+                android:id="@+id/firstRowBoxes"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:baselineAligned="false"
+                android:orientation="horizontal">
+
+                <!-- Box 1 -->
+                <LinearLayout
+                    android:id="@+id/box1"
+                    android:layout_width="0dp"
+                    android:layout_height="185dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/box_background"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:orientation="horizontal"
+                    android:layout_margin="8dp"
+                    android:padding="8dp">
+
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:contentDescription="@string/gelusil"
+                        android:src="@drawable/gelusil_img" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="2dp"
+                        android:text="@string/gelusil"
+                        android:textColor="@color/black"
+                        android:gravity="center"
+                        android:textSize="19sp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/verifyButton1"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:text="@string/verify"
+                android:layout_marginStart="8dp"
+                android:layout_marginBottom="20dp"
+                android:backgroundTint="#FFD700"
+                android:textColor="#006400"/>
+
+            <!-- Second row of boxes -->
+            <LinearLayout
+                android:id="@+id/secondRowBoxes"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:baselineAligned="false"
+                android:orientation="horizontal">
+
+                <!-- Box 2 -->
+                <LinearLayout
+                    android:id="@+id/box2"
+                    android:layout_width="0dp"
+                    android:layout_height="185dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/box_background"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:orientation="horizontal"
+                    android:layout_margin="8dp"
+                    android:padding="8dp">
+
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:contentDescription="@string/paracetamol"
+                        android:src="@drawable/paracetamol_img" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="2dp"
+                        android:text="@string/paracetamol"
+                        android:textColor="@color/black"
+                        android:gravity="center"
+                        android:textSize="18sp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/verifyButton2"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:text="@string/verify"
+                android:layout_marginStart="8dp"
+                android:layout_marginBottom="20dp"
+                android:backgroundTint="#FFD700"
+                android:textColor="#006400"/>
+
+        <LinearLayout
+            android:id="@+id/thirdRowBoxes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:baselineAligned="false"
+            android:orientation="horizontal">
+
+            <!-- Box 3 -->
+            <LinearLayout
+                android:id="@+id/box3"
+                android:layout_width="0dp"
+                android:layout_height="185dp"
+                android:layout_marginStart="8dp"
+                android:layout_weight="1"
+                android:background="@drawable/box_background"
+                android:clickable="true"
+                android:focusable="true"
+                android:orientation="horizontal"
+                android:layout_margin="8dp"
+                android:padding="8dp">
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:contentDescription="@string/folvite"
+                    android:src="@drawable/folvite_img" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="2dp"
+                    android:text="@string/folvite"
+                    android:textColor="@color/black"
+                    android:gravity="center"
+                    android:textSize="18sp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+            <Button
+                android:id="@+id/verifyButton3"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:text="@string/verify"
+                android:layout_marginStart="8dp"
+                android:layout_marginBottom="20dp"
+                android:backgroundTint="#FFD700"
+                android:textColor="#006400"/>
+
+            <!-- Third row of boxes -->
+            <LinearLayout
+                android:id="@+id/fourthRowBoxes"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:baselineAligned="false"
+                android:orientation="horizontal">
+
+                <!-- Box 4 -->
+                <LinearLayout
+                    android:id="@+id/box4"
+                    android:layout_width="0dp"
+                    android:layout_height="185dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/box_background"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:orientation="horizontal"
+                    android:layout_margin="8dp"
+                    android:padding="8dp">
+
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:contentDescription="@string/pantoprazole"
+                        android:src="@drawable/pantoprazole_img" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="2dp"
+                        android:text="@string/pantoprazole"
+                        android:textColor="@color/black"
+                        android:gravity="center"
+                        android:textSize="18sp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/verifyButton4"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:text="@string/verify"
+                android:layout_marginStart="8dp"
+                android:layout_marginBottom="20dp"
+                android:backgroundTint="#FFD700"
+                android:textColor="#006400"/>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

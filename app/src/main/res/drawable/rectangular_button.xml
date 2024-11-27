@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Set the default background color to cyan -->
+    <solid android:color="#FFFFFF" />
+
+    <!-- Corners to make the button rectangular -->
+    <corners android:radius="20dp" />
+
+    <!-- Optional stroke (no stroke in this case) -->
+    <stroke android:width="0dp" android:color="#000000" />
+</shape>
